@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ap="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".BatMapper"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Step: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textStep"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textYaw"
+        android:textColor="#091df7" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/loop"
+        android:id="@+id/buttonLoop"
+        android:textSize="12sp"
+        android:layout_toEndOf="@+id/buttonInertial"
+        android:layout_alignBottom="@+id/buttonInertial"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/save"
+        android:id="@+id/buttonSave"
+        android:textSize="12sp"
+        android:layout_toEndOf="@+id/buttonLoop"
+        android:layout_alignBottom="@+id/buttonInertial"/>
+
+    <com.androidplot.xy.XYPlot
+        android:theme="@style/FullScreenGraph"
+        android:id="@+id/plot"
+        android:orientation="horizontal"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        ap:title="Indoor Floor Plan"
+        ap:lineLabels="left|bottom"
+        ap:lineLabelRotationBottom="-45"
+        ap:lineLabelInsetLeft="15dp"
+        ap:lineLabelInsetBottom="10dp"
+        ap:renderMode="use_background_thread" />
+
+    <Button
+        android:text="RD"
+        android:id="@+id/rightDoor"
+        android:textSize="8sp"
+        android:clickable="false"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/plot" />
+
+    <Button
+        android:text="LD"
+        android:id="@+id/leftDoor"
+        android:textSize="10sp"
+        android:clickable="false"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/rightDoor" />
+
+    <!--<org.opencv.android.JavaCameraView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/java_cam"-->
+        <!--android:layout_toEndOf="@+id/plot"-->
+        <!--android:layout_below="@+id/buttonSave"/>-->
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="@string/start"
+        android:id="@+id/buttonInertial"
+        android:textSize="12sp"
+        android:layout_below="@+id/textTop"
+        android:layout_toEndOf="@+id/plot" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="L:"
+        android:id="@+id/textTop"
+        android:textColor="#091df7"
+        android:layout_width="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/plot" />
+
+    <TextView
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:text="@string/yaw"
+        android:id="@+id/textYaw"
+        android:textAlignment="textStart"
+        android:textColor="#091df7"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textBot" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="R:"
+        android:id="@+id/textBot"
+        android:textColor="#0729e8"
+        android:layout_width="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textTop" />
+
+</RelativeLayout>

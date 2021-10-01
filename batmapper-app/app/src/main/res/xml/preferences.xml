@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="MapScanner settings"
+    android:key="mapScannerSettings">
+
+    <PreferenceCategory
+        android:title="Computer Vision Settings"
+        android:key="compVisionsettings">
+        <CheckBoxPreference
+            android:title="Computer Vision"
+            android:id="@+id/chkBoxCompVision"
+            android:key="computer_vision"
+            android:summary="Toggle Computer Vision processing"
+            android:state_checked="false"
+            android:checked="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Save Settings"
+        android:key="saveSettings">
+        <EditTextPreference
+            android:title="Building Name"
+            android:key="saveName"
+            android:defaultValue="@string/plot"
+            android:summary="Set plot save name"/>
+    </PreferenceCategory>
+</PreferenceScreen>
